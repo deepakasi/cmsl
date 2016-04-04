@@ -1,0 +1,41 @@
+<%= form_for(@login1) do |f| %>
+  <% if @login1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@login1.errors.count, "error") %> prohibited this login1 from being saved:</h2>
+
+      <ul>
+      <% @login1.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Email %><br>
+    <%= f.text_field :Email %>
+  </div>
+  <div class="field">
+    <%= f.label :CompanyName %><br>
+    <%= f.text_field :CompanyName %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br>
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :EscalationLevel %><br>
+    <%= f.text_field :EscalationLevel %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Login1s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Companyname</th>
+      <th>Phone</th>
+      <th>Escalationlevel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @login1s.each do |login1| %>
+      <tr>
+        <td><%= login1.Email %></td>
+        <td><%= login1.CompanyName %></td>
+        <td><%= login1.Phone %></td>
+        <td><%= login1.EscalationLevel %></td>
+        <td><%= link_to 'Show', login1 %></td>
+        <td><%= link_to 'Edit', edit_login1_path(login1) %></td>
+        <td><%= link_to 'Destroy', login1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Login1', new_login1_path %>
